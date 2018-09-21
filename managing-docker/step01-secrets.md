@@ -72,6 +72,8 @@ docker.elastic.co/beats/filebeat:6.4.0 filebeat -e -strict.perms=false`{{execute
 --label co.elastic.logs/fileset.stdout=access \
 --label co.elastic.logs/fileset.stderr=error \
 --label co.elastic.metrics/module=nginx \
+--label co.elastic.metrics/hosts='${data.host}:80' \
+-v /root/course/nginx-default.conf:/etc/nginx/conf.d/default.conf:ro \
 --name nginx \
 -p 81:80 nginx`{{execute HOST1}}
 
