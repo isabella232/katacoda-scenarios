@@ -78,6 +78,7 @@ And now start Metricbeat:
 `docker run -d \
 --net course_stack \
 --name=metricbeat \
+--user=root \
 --volume="/root/course/metricbeat.yml:/usr/share/metricbeat/metricbeat.yml:ro" \
 --volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
 docker.elastic.co/beats/metricbeat:6.4.1 metricbeat -e`{{execute HOST1}}
