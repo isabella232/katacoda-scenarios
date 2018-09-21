@@ -11,6 +11,7 @@ This docker run command deploys a development Elasticsearch instance.  You can r
 `
 docker run -d \
   --name=elasticsearch \
+  --label co.elastic.logs/module=elasticsearch \
   --env="discovery.type=single-node" \
   --env="ES_JAVA_OPTS=-Xms256m -Xmx256m" \
   --network=course_stack \
@@ -35,6 +36,7 @@ docker run -d \
   --user=kibana \
   --network=course_stack -p 5601:5601 \
   --health-cmd='curl -s -f http://localhost:5601/login' \
+  --label co.elastic.logs/module=kibana \
   docker.elastic.co/kibana/kibana:6.4.0 
 `{{execute HOST1}}
 
