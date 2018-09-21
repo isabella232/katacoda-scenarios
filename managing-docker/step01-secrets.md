@@ -65,23 +65,6 @@ And now start Filebeat:
 --volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
 docker.elastic.co/beats/filebeat:6.4.0 filebeat -e -strict.perms=false`{{execute HOST1}}
 
-### Start Metricbeat
-
-Before you start Metricbeat, have a look at the configuration.  The hints based autodiscover feature is enabled by uncommenting a few lines of the metricbeat.yml, so we will bind mount it in the Docker run command.  Use grep to see the lines that enable hints based autodiscover:
-
-`grep -A4 metricbeat.autodiscover course/metricbeat.yml`{{execute HOST1}}
-
-And now start Metricbeat:
-
-`docker run -d \
---net course_stack \
---name=metricbeat \
---user=root \
---volume="/var/lib/docker/containers:/var/lib/docker/containers:ro" \
---volume="/root/course/metricbeat.yml:/usr/share/metricbeat/metricbeat.yml:ro" \
---volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
-docker.elastic.co/beats/metricbeat:6.4.0 metricbeat -e -strict.perms=false`{{execute HOST1}}
-
 ### Start NGINX
 `docker run -d \
 --net course_stack \
