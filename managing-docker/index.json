@@ -1,4 +1,5 @@
 {
+  "private": true, 
   "title": "Deploy Elasticsearch, Kibana, and Filebeat in Docker containers",
   "description": "Collection of logs and metrics is automated using Docker labels to provide hints to Elastic Beats.  Beats modules provide collection, parsing, and visualization configuration to the Elastic Stack",
   "details": {
