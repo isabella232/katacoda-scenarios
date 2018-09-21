@@ -13,12 +13,13 @@ docker run -d \
   --name=elasticsearch \
   --label co.elastic.logs/module=elasticsearch \
   --label co.elastic.metrics/module=elasticsearch \
+  --label co.elastic.metrics/hosts='${data.host}:9200' \
   --env="discovery.type=single-node" \
   --env="ES_JAVA_OPTS=-Xms256m -Xmx256m" \
   --network=course_stack \
   -p 9300:9300 -p 9200:9200 \
   --health-cmd='curl -s -f http://localhost:9200/_cat/health' \
-  docker.elastic.co/elasticsearch/elasticsearch:6.4.0 
+  docker.elastic.co/elasticsearch/elasticsearch:6.4.1 
 `{{execute HOST1}}
 
 ### Check the health / readiness of Elasticsearch
@@ -39,7 +40,8 @@ docker run -d \
   --health-cmd='curl -s -f http://localhost:5601/login' \
   --label co.elastic.logs/module=kibana \
   --label co.elastic.metrics/module=kibana \
-  docker.elastic.co/kibana/kibana:6.4.0 
+  --label co.elastic.metrics/hosts='${data.host}:${data.port}' \
+  docker.elastic.co/kibana/kibana:6.4.1 
 `{{execute HOST1}}
 
 ### Check the health / readiness of Kibana
@@ -63,7 +65,22 @@ And now start Filebeat:
 --volume="/var/lib/docker/containers:/var/lib/docker/containers:ro" \
 --volume="/root/course/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro" \
 --volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
-docker.elastic.co/beats/filebeat:6.4.0 filebeat -e -strict.perms=false`{{execute HOST1}}
+docker.elastic.co/beats/filebeat:6.4.1 filebeat -e -strict.perms=false`{{execute HOST1}}
+
+### Start Metricbeat
+
+Before you start Metricbeat, have a look at the configuration.  The hints based autodiscover feature is enabled by uncommenting a few lines of the metricbeat.yml, so we will bind mount it in the Docker run command.  Use grep to see the lines that enable hints based autodiscover:
+
+`grep -A4 metricbeat.autodiscover course/metricbeat.yml`{{execute HOST1}}
+
+And now start Metricbeat:
+
+`docker run -d \
+--net course_stack \
+--name=metricbeat \
+--volume="/root/course/metricbeat.yml:/usr/share/metricbeat/metricbeat.yml:ro" \
+--volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
+docker.elastic.co/beats/metricbeat:6.4.1 metricbeat -e`{{execute HOST1}}
 
 ### Start NGINX
 `docker run -d \
