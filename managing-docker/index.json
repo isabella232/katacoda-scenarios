@@ -5,7 +5,28 @@
   "details": {
     "steps": [
       {
-        "text": "step01-secrets.md"
+        "text": "step01-network.md"
+      },
+      {
+        "text": "step02-elasticsearch.md"
+      },
+      {
+        "text": "step03-kibana.md"
+      },
+      {
+        "text": "step04-nginx.md"
+      },
+      {
+        "text": "step05-filebeat.md"
+      },
+      {
+        "text": "step06-metricbeat.md"
+      },
+      {
+        "text": "step07-traffic.md"
+      },
+      {
+        "text": "step08-dashboards.md"
       }
     ],
     "intro": {
