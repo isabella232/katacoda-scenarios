@@ -17,3 +17,9 @@ And now start Metricbeat:
 --volume="/:/hostfs:ro" \
 docker.elastic.co/beats/metricbeat:6.4.1 metricbeat -e`{{execute HOST1}}
 
+`docker run \
+  --mount type=bind,source=/proc,target=/hostfs/proc,readonly \ 
+  --mount type=bind,source=/sys/fs/cgroup,target=/hostfs/sys/fs/cgroup,readonly \ 
+  --mount type=bind,source=/,target=/hostfs,readonly \ 
+  --net=host \
+  docker.elastic.co/beats/metricbeat:6.4.1 -system.hostfs=/hostfs`{{execute HOST1}}
