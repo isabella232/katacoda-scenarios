@@ -3,7 +3,7 @@
 To monitor an application running in Docker, you need logs and metrics from the app, as well as, the Docker environment it's running in. Using Elasticsearch, Kibana, and Beats allows you to collect, search, analyze and visualize all of this data about the app and the Docker (hosts, containers, etc) in one place. 
 
 ### Let's take a look at the goal
-This is one of the out of the box dashboards that you will see once you deploy the Elastic Stack and an example application (NGINX) in this Katacoda environment.  This is the Docker metrics dashboard that ships with Metricbeat.  It shows an overview of the CPU and Memory use of every container, allows you to drill in to a specific container, and the containers per node.  Looking at the dashboard is much easier than running the equivalent docker logs, top, describe, etc. commands.
+This is one of the out of the box dashboards that you will see once you deploy the Elastic Stack and an example application (NGINX) in this Katacoda environment.  This is the Docker metrics dashboard that ships with Metricbeat.  It shows an overview of the CPU and Memory use of every container, allows you to drill in to a specific container, and the containers per node.  Looking at the dashboard is much easier than running the equivalent docker logs, top, inspect, etc. commands.
 
 ![Docker Dash](https://raw.githubusercontent.com/elastic/katacoda-scenarios/master/images/docker-dash2.png)
 
