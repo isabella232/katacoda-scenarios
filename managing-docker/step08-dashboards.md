@@ -24,6 +24,6 @@ Select yes or no to share basic usage information with Elastic
 
 If you generated traffic in NGINX earlier in the demo, you should be able to see these in the Kibana Discover app, and in the [Filebeat nginx] dashboards.
 
-- [NGINX Dashboards](https://[[HOST_SUBDOMAIN]]-30601-[[KATACODA_HOST]].environments.katacoda.com/app/kibana#/dashboards?filter=nginx)
-- [Apache Saved Search](https://[[HOST_SUBDOMAIN]]-30601-[[KATACODA_HOST]].environments.katacoda.com/app/kibana#/discover/Apache2-access-logs)
-- [Kibana](https://[[HOST_SUBDOMAIN]]-30601-[[KATACODA_HOST]].environments.katacoda.com/app/kibana)
+- [NGINX Dashboards](https://[[HOST_SUBDOMAIN]]-5601-[[KATACODA_HOST]].environments.katacoda.com/app/kibana#/dashboards?filter=nginx)
+- [Apache Saved Search](https://[[HOST_SUBDOMAIN]]-5601-[[KATACODA_HOST]].environments.katacoda.com/app/kibana#/discover/Apache2-access-logs)
+- [Kibana](https://[[HOST_SUBDOMAIN]]-5601-[[KATACODA_HOST]].environments.katacoda.com/app/kibana)
