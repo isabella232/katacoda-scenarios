@@ -22,7 +22,7 @@ Note in the NGINX run command there are labels, these labels are available in th
 
 You can see these labels with the command:
 
-`docker inspect nginx | grep -A4 Labels`{{execute HOST1}}
+`docker inspect nginx | grep -A7 Labels`{{execute HOST1}}
 
 ### Generate some traffic through NGINX
 At the top of the terminal you will see an NGINX tab.  Click on that and you will see the default NGINX page.  Add a page name to the URL, for example /foo, and this will generate a 404 error.  Now return to the Katacoda tab and click on the Kibana tab above the terminal.  Open the Dashboards and search for nginx, click on the Filebeat NGINX overview.
