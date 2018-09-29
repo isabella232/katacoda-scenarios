@@ -2,8 +2,8 @@
 We will deploy the standard NGINX Docker image with a few configuration changes:
 1. set the Docker network
 1. add some labels to the container to specify how the logs and metrics should be collected
-1. add the x-forwarded-for IP addresses passed in by the Katacoda proxy to the access log
-1. allow the local 172 network to access the server status metrics
+1. mount a custom nginx.conf to add the x-forwarded-for IP addresses passed in by the Katacoda proxy to the access log
+1. mount a custom conf.d/default.conf allow the local 172 network to access the server status metrics
 
 ### Start NGINX
 `docker run -d \
