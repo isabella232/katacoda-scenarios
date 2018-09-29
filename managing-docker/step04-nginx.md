@@ -6,6 +6,7 @@
 --label co.elastic.logs/fileset.stderr=error \
 --label co.elastic.metrics/module=nginx \
 --label co.elastic.metrics/hosts='${data.host}:${data.port}' \
+-v /root/course/nginx.conf:/etc/nginx/nginx.conf:ro \
 -v /root/course/nginx-default.conf:/etc/nginx/conf.d/default.conf:ro \
 --name nginx \
 -p 80:80 nginx`{{execute HOST1}}
