@@ -27,10 +27,45 @@ You can see these labels with the command:
 ### Generate some traffic through NGINX
 At the top of the terminal you will see an NGINX tab.  Click on that and you will see the default NGINX page.  Add a page name to the URL, for example /foo, and this will generate a 404 error.  Now return to the Katacoda tab and click on the Kibana tab above the terminal.  Open the Dashboards and search for nginx, click on the Filebeat NGINX overview.
 
-`docker run --name=redis-slave --env="GET_HOSTS_FROM=dns" --volume="/data" --network=course_stack -p 6379 --label com.docker.compose.service="redis-slave" --detach=true gcr.io/google_samples/gb-redisslave:v1 /bin/sh -c /run.sh`{{execute HOST1}}
+`docker run --name=redis-master \
+  --label co.elastic.logs/module=redis \
+  --label co.elastic.logs/fileset.stdout=log \
+  --label co.elastic.metrics/module=redis \
+  --label co.elastic.metrics/metricsets="info, keyspace" \
+  --label co.elastic.metrics/hosts='${data.host}:${data.port}' \
+  --env="GET_HOSTS_FROM=dns" \
+  --env="HOME=/root" \
+  --volume="/data" \
+  --network=course_stack -p 6379 \
+  --label com.docker.compose.service="redis-master" \
+  --detach=true \
+  gcr.io/google_containers/redis:e2e redis-server /etc/redis/redis.conf`{{execute HOST1}}
 
-`docker run --name=redis-master --env="HOME=/root" --volume="/data" --network=course_stack -p 6379 --label com.docker.compose.service="redis-master" --detach=true gcr.io/google_containers/redis:e2e redis-server /etc/redis/redis.conf`{{execute HOST1}}
+`docker run --name=redis-slave \
+  --label co.elastic.logs/module=redis \
+  --label co.elastic.logs/fileset.stdout=log \
+  --label co.elastic.metrics/module=redis \
+  --label co.elastic.metrics/metricsets="info, keyspace" \
+  --label co.elastic.metrics/hosts='${data.host}:${data.port}' \
+  --env="GET_HOSTS_FROM=dns" \
+  --volume="/data" \
+  --network=course_stack -p 6379 \
+  --label com.docker.compose.service="redis-slave" \
+  --detach=true \
+  gcr.io/google_samples/gb-redisslave:v1 /bin/sh -c /run.sh`{{execute HOST1}}
 
-`docker run --name=frontend --env="GET_HOSTS_FROM=dns" --network=course_stack -p 80:80 --label com.docker.compose.service="frontend" --detach=true gcr.io/google-samples/gb-frontend:v4 apache2-foreground`{{execute HOST1}}
+`docker run \
+  --name=frontend \
+  --label co.elastic.logs/module=apache2
+  --label co.elastic.logs/fileset.stdout=access
+  --label co.elastic.logs/fileset.stderr=error
+  --label co.elastic.metrics/module=apache
+  --label co.elastic.metrics/metricsets=status
+  --label co.elastic.metrics/hosts='${data.host}:${data.port}'
+  --env="GET_HOSTS_FROM=dns" \
+  --network=course_stack -p 80:80 \
+  --label com.docker.compose.service="frontend" \
+  --detach=true \
+  gcr.io/google-samples/gb-frontend:v4 apache2-foreground`{{execute HOST1}}
 
 
