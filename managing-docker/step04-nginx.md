@@ -56,12 +56,12 @@ At the top of the terminal you will see an NGINX tab.  Click on that and you wil
 
 `docker run \
   --name=frontend \
-  --label co.elastic.logs/module=apache2
-  --label co.elastic.logs/fileset.stdout=access
-  --label co.elastic.logs/fileset.stderr=error
-  --label co.elastic.metrics/module=apache
-  --label co.elastic.metrics/metricsets=status
-  --label co.elastic.metrics/hosts='${data.host}:${data.port}'
+  --label co.elastic.logs/module=apache2 \
+  --label co.elastic.logs/fileset.stdout=access \
+  --label co.elastic.logs/fileset.stderr=error \
+  --label co.elastic.metrics/module=apache \
+  --label co.elastic.metrics/metricsets=status \
+  --label co.elastic.metrics/hosts='${data.host}:${data.port}' \
   --env="GET_HOSTS_FROM=dns" \
   --network=course_stack -p 80:80 \
   --label com.docker.compose.service="frontend" \
