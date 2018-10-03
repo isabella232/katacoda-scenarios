@@ -15,5 +15,6 @@ Packetbeat lets you tap into this data and parse in real time to understand how 
  --name=packetbeat \
  --cap-add=NET_ADMIN \
  --net course_stack \
+ --net host \
  --user root \
  docker.elastic.co/beats/packetbeat:6.4.1 -e`{{execute HOST1}}
