@@ -1,3 +1,7 @@
+### The sample Guestbook application
+The application consists of:
+![NGINX, Apache httpd, PHP, Redis](https://raw.githubusercontent.com/elastic/katacoda-scenarios/master/images/GuestbookArchWithNGINX.001.png)
+
 ### Container configuration notes
 All of the containers that make up the application have these things in common:
 1. We set the Docker network to `course_stack`
@@ -5,10 +9,8 @@ All of the containers that make up the application have these things in common:
 1. Logs are written to STDOUT and STDERR
 
 ### Deploy the Guestbook application
-The application consists of:
-![NGINX, Apache httpd, PHP, Redis](https://raw.githubusercontent.com/elastic/katacoda-scenarios/master/images/GuestbookArchWithNGINX.001.png)
 
-### Deploy Redis master
+#### Deploy Redis master
 This Redis instance receives new Guestbook entries and writes them to the cache.
 
 `docker run --name=redis-master \
@@ -83,6 +85,6 @@ You can see these labels with the command:
 
 `docker inspect nginx | grep -A7 Labels`{{execute HOST1}}
 
-### Generate some traffic through NGINX
-At the top of the terminal you will see an NGINX tab.  Click on that and you will see the Guestbook application.  Type in a message and click Submit.  Send in several messages, and also change the URL by adding `/foo` to generate some 404 errors.  Now return to the Katacoda tab and continue.
+### Put some entries in the Guestbook
+At the top of the terminal you will see an **Guestbook** tab.  Click on that and you will see the Guestbook application.  Type in a message and click Submit.  Send in several messages, and also change the URL by adding `/foo` to generate some 404 errors.  Now return to the Katacoda tab and continue.
 
