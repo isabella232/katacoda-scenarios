@@ -22,6 +22,7 @@ This Redis instance receives new Guestbook entries and writes them to the cache.
   --env="GET_HOSTS_FROM=dns" \
   --env="HOME=/root" \
   --volume="/data" \
+  -p 6379 \
   --network=course_stack \
   --label com.docker.compose.service="redis-master" \
   --detach=true \
