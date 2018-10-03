@@ -3,7 +3,7 @@ We will deploy the standard NGINX Docker image with a few configuration changes:
 1. set the Docker network
 1. add some labels to the container to specify how the logs and metrics should be collected
 1. mount a custom nginx.conf to add the x-forwarded-for IP addresses passed in by the Katacoda proxy to the access log
-1. mount a custom conf.d/default.conf allow the local 172 network to access the server status metrics
+1. mount a custom conf.d/default.conf allow the local 172 network to access the server status metrics and forward requests to an Apache httpd server
 
 ### Start NGINX
 `docker run -d \
@@ -16,7 +16,7 @@ We will deploy the standard NGINX Docker image with a few configuration changes:
 -v /root/course/nginx.conf:/etc/nginx/nginx.conf:ro \
 -v /root/course/nginx-default.conf:/etc/nginx/conf.d/default.conf:ro \
 --name nginx \
--p 80:80 nginx:1.15.4`{{execute HOST1}}
+-p 8080:8080 nginx:1.15.4`{{execute HOST1}}
 
 Note in the NGINX run command there are labels, these labels are available in the Docker environment, and the Beats detect them and configure log and metric collection.  The labels tell Filebeat that the module name **nginx** should be used to collect, parse, and visualize the logs from this container, and that the access logs are at STDOUT, while the error logs are at STDERR.  Similarly, the labels tell Metricbeat to collect metrics from the container name and port.
 
