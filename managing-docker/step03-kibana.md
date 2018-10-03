@@ -16,7 +16,6 @@ docker run -d \
 
 ### Check the health / readiness of Kibana
 
-In the run command that you just ran, there is a health check defined.  This connects to Kibana and ensures that it is available. In the output of the following command you will see the test result.  Wait until it returns a healthy response before deploying Beats, as the Beats need to connect to both Elasticsearch and Kibana to install the modules that customize the experience related to the apps you are running (NGINX, Apache HTTPD, etc.).
+In the run command that you just ran, there is a health check defined.  This connects to Kibana and ensures that it is available. In the output of the following command you will see the test result.  Just like the check to make sure that Elasticsearch is ready, run this command to wait until Kibana is ready.  This is necessary before deploying Beats, as the Beats need to connect to both Elasticsearch and Kibana to install the modules that customize the experience related to the apps you are running (NGINX, Apache HTTPD, etc.).
 
-`docker inspect kibana | grep -A8 Health`{{execute HOST1}}
-
+`bash /root/course/healthstate.sh kibana`{{execute HOST1}}

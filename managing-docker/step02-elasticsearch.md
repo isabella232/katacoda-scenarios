@@ -24,5 +24,5 @@ The script you will run calls this command in a loop until the `docker inspect` 
 
 `docker inspect elasticsearch | jq -r ".[].State.Health.Status`
 
-`/root/course/healthstate.sh elasticsearch`{{execute HOST1}}
+`bash /root/course/healthstate.sh elasticsearch`{{execute HOST1}}
 
