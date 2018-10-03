@@ -1,6 +1,6 @@
 ### Start Filebeat
 
-Before you start Filebeat, have a look at the configuration.  The hints based autodiscover feature is enabled by uncommenting a few lines of the filebeat.yml, so we will bind mount it in the Docker run command.  Use grep to see the lines that enable hints based autodiscover:
+Before you start Filebeat, have a look at the configuration.  The hints based autodiscover feature is enabled by uncommenting a few lines of the filebeat.yml.  The grep command below will show the lines.  The full file is in the dir `/root/course/` if you want to look at it in the terminal. filebeat.yml is mounted by the Docker run command.  Use grep to see the lines that enable hints based autodiscover:
 
 `grep -A4 filebeat.autodiscover course/filebeat.yml`{{execute HOST1}}
 
