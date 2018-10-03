@@ -1,14 +1,14 @@
 ### Welcome
 
-To monitor an application running in Docker, you need logs and metrics from the app and the Docker environment it's running in. Using Elasticsearch, Kibana, and Beats allows you to collect, search, analyze and visualize all of this data about the app and the Docker (hosts, containers, etc) in one place. 
+To monitor an application running in Docker, you need logs and metrics from the app and the Docker environment it's running in. Using Elasticsearch, Kibana, and Beats allows you to collect, search, analyze and visualize all of this data about the app and the Docker (hosts, containers, etc) *in one place*. 
 
 ### Let's take a look at the goal
-This is one of the out of the box dashboards that you will see once you deploy the Elastic Stack and an example application (NGINX) in this Katacoda environment.  This is the Docker metrics dashboard that ships with Metricbeat.  It shows an overview of the CPU and Memory use of every container, allows you to drill in to a specific container, and the containers per node.  Looking at the dashboard is much easier than running the equivalent docker logs, top, inspect, etc. commands.
+This is one of the out-of-the-box dashboards that you will see once you deploy the Elastic Stack and an example application (NGINX) in this Katacoda environment.  This is the Docker metrics dashboard that ships with Metricbeat.  It shows an overview of the CPU and Memory use of every container, allows you to drill in to a specific container, and the containers per node.  Looking at the dashboard is much easier than running the equivalent `docker logs`, `docker top`, `docker inspect`, etc. commands.
 
 ![Docker Dash](https://raw.githubusercontent.com/elastic/katacoda-scenarios/master/images/docker-dash2.png)
 
 ### Beat modules
-Above is the Docker metrics dashboard that is part of the Metricbeat Docker module.  Modules provide all  of the configuration needed to acquire,  parse, index, and visualize common log formats. All you have to do is identify which modules to enable and the Elastic Stack does the rest.  In this scenario you will used Docker Labels to tell Filebeat and Metricbeat which modules to use. 
+Above is the Docker metrics dashboard that is part of the Metricbeat Docker module.  Modules provide all  of the configuration needed to acquire,  parse, index, and visualize common log formats. All you have to do is identify which modules to enable and the Elastic Stack does the rest.  In this scenario you will use Docker Labels to tell Filebeat and Metricbeat which modules to use. 
 
 ### This is an example of labels to specify what Beat module to use:
 ![nginx module hint](https://raw.githubusercontent.com/elastic/katacoda-scenarios/master/images/docker-hints-autodiscover.png)
