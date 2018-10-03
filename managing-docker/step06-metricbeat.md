@@ -1,6 +1,6 @@
 ### Start Metricbeat
 
-Before you start Metricbeat, have a look at the configuration.  The hints based autodiscover feature is enabled by uncommenting a few lines of the metricbeat.yml, so we will bind mount it in the Docker run command.  Use grep to see the lines that enable hints based autodiscover:
+Before you start Metricbeat, have a look at the configuration.  The hints based autodiscover feature is enabled by uncommenting a few lines of the metricbeat.yml, just  like the filebeat configuration on the previous page.  Use grep to see the lines that enable hints based autodiscover:
 
 `grep -A4 metricbeat.autodiscover course/metricbeat.yml`{{execute HOST1}}
 
