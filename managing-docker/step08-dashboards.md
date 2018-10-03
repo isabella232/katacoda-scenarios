@@ -3,7 +3,7 @@ If you have not yet connected to the Guestbook instance, go ahead and do so now.
 Launch Kibana by clicking on the **Kibana** tab at the top of your terminal. 
 
 #### Configure Defaults
-You should now have indices for the Beats in Elasticsearch.   In order to use Kibana to search and visualize the information in those indices you have to set one of the patterns **filebeat-\***, **metricbeat-\***, or **packetbeat-\*** as the default.  Click on **Management** and then **Index Patterns**.
+You should now have indices for the Beats in Elasticsearch.   In order to use Kibana to search and visualize the information in those indices you have to set one of the patterns **filebeat-\*** or  **metricbeat-\*** as the default.  Click on **Management** and then **Index Patterns**.
 
 ![abc](https://user-images.githubusercontent.com/25182304/43741865-d552ac5a-999d-11e8-9c27-3ce5ef38ecc8.png)
 
