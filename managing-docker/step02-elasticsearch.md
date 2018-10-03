@@ -18,7 +18,11 @@ docker run -d \
 
 ### Check the health / readiness of Elasticsearch
 
-In the run command that you just ran, there is a health check defined.  This connects to the cluster health API of Elasticsearch.  In the output of the following command you will see the test result.  Wait until it returns a healthy response before deploying Kibana.  You may have to run this command several times as it takes a minute or two to download Elasticsearch and then it takes another minute for the process to get to the ready state the first time.
+In the run command that you just ran, there is a health check defined.  This connects to the cluster health API of Elasticsearch.  In the output of the following command you will see the test result.  Wait until it returns a healthy response before deploying Kibana.  It may take a minute or two to download Elasticsearch and then it takes another minute for the process to get to the ready state the first time.
 
-`docker inspect elasticsearch | grep -A8 Health`{{execute HOST1}}
+The script you will run calls this command in a loop until the `docker inspect` command returns a `healthy` state:
+
+`docker inspect elasticsearch | jq -r ".[].State.Health.Status`
+
+`/root/course/healthstate.sh elasticsearch`{{execute HOST1}}
 
