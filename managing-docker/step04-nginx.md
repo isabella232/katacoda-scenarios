@@ -24,7 +24,7 @@ This Redis instance receives new Guestbook entries and writes them to the cache.
   --env="GET_HOSTS_FROM=dns" \
   --env="HOME=/root" \
   --volume="/data" \
-  --network=course_stack -p 6379 \
+  --network=course_stack \
   --label com.docker.compose.service="redis-master" \
   --detach=true \
   gcr.io/google_containers/redis:e2e redis-server /etc/redis/redis.conf`{{execute HOST1}}
@@ -40,7 +40,7 @@ This Redis instance syncs with the master instance and returns the cached conten
   --label co.elastic.metrics/hosts='${data.host}:${data.port}' \
   --env="GET_HOSTS_FROM=dns" \
   --volume="/data" \
-  --network=course_stack -p 6379 \
+  --network=course_stack \
   --label com.docker.compose.service="redis-slave" \
   --detach=true \
   gcr.io/google_samples/gb-redisslave:v1 /bin/sh -c /run.sh`{{execute HOST1}}
