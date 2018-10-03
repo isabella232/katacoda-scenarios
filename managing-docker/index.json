@@ -1,7 +1,7 @@
 {
   "private": true, 
   "title": "Collect logs & metrics from your app and Dcoker env",
-  "description": "Collection of logs and metrics is automated using Docker labels to provide hints to Elastic Beats.  Beats modules provide collection, parsing, and visualization configuration to the Elastic Stack",
+  "description": "Automate collection of logs &  metrics, then search, analyze, and visualize them all in one place with Elasticsearch & Kibana",
   "details": {
     "steps": [
       {
