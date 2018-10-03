@@ -50,7 +50,7 @@
     "uieditorpath": "/root/course",
     "showdashboard": true,
     "dashboards": [
-      { "name": "NGINX", "port": 8080 },
+      { "name": "Guestbook", "port": 8080 },
       { "name": "Kibana", "port": 5601 }
     ]
   },
