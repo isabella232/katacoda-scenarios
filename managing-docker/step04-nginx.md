@@ -12,7 +12,7 @@ PHP
 Redis
 `<insert image here>`
 
-### Deploy Redis
+### Deploy Redis master
 This Redis instance receives new Guestbook entries and writes them to the cache.
 
 `docker run --name=redis-master \
@@ -29,7 +29,7 @@ This Redis instance receives new Guestbook entries and writes them to the cache.
   --detach=true \
   gcr.io/google_containers/redis:e2e redis-server /etc/redis/redis.conf`{{execute HOST1}}
 
-### Deploy Redis
+### Deploy Redis worker
 This Redis instance syncs with the master instance and returns the cached content to the frontend web server.
 
 `docker run --name=redis-slave \
