@@ -6,11 +6,7 @@ All of the containers that make up the application have these things in common:
 
 ### Deploy the Guestbook application
 The application consists of:
-NGINX
-Apache httpd
-PHP
-Redis
-`<insert image here>`
+![NGINX, Apache httpd, PHP, Redis](https://raw.githubusercontent.com/elastic/katacoda-scenarios/master/images/GuestbookArchWithNGINX.001.png)
 
 ### Deploy Redis master
 This Redis instance receives new Guestbook entries and writes them to the cache.
