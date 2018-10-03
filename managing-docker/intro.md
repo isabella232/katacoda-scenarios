@@ -23,5 +23,6 @@ If this is your first time using Katacoda, let me introduce some of the cool ide
 
 * In general, you don't need to type.  Most of the time, you can simply click on a command in the instructions to run it.
 * If you need access to a web browser, look for tabs at the top of the terminal window. In this course you will need two pages - one for the Guestbook application, and one for  Kibana. You should see a *Guestbook* tab and a *Kibana* tab in the terminal.  Once you have the Guestbook app running, click on the *Guestbook* tab to open it in a browser window and make some entries. Likewise, once you have Kibana running you should open that tab and look at the data.
+![Tabs](https://raw.githubusercontent.com/elastic/katacoda-scenarios/master/images/Katacoda-tabs.png)
 * Each time you start or restart a course everything gets reset. If you misconfigure something somehow, simply restart the course.
 
