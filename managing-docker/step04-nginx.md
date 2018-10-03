@@ -63,7 +63,7 @@ At the top of the terminal you will see an NGINX tab.  Click on that and you wil
   --label co.elastic.metrics/metricsets=status \
   --label co.elastic.metrics/hosts='${data.host}:${data.port}' \
   --env="GET_HOSTS_FROM=dns" \
-  --network=course_stack -p 80:80 \
+  --network=course_stack \
   --label com.docker.compose.service="frontend" \
   --detach=true \
   gcr.io/google-samples/gb-frontend:v4 apache2-foreground`{{execute HOST1}}
