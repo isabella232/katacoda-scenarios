@@ -22,7 +22,6 @@ This Redis instance receives new Guestbook entries and writes them to the cache.
   --env="GET_HOSTS_FROM=dns" \
   --env="HOME=/root" \
   --volume="/data" \
-  -p 6379:6379 \
   --network=course_stack \
   --label com.docker.compose.service="redis-master" \
   --detach=true \
@@ -39,7 +38,6 @@ This Redis instance syncs with the master instance and returns the cached conten
   --label co.elastic.metrics/hosts='${data.host}:${data.port}' \
   --env="GET_HOSTS_FROM=dns" \
   --volume="/data" \
-  -p 6380:6379 \
   --network=course_stack \
   --label com.docker.compose.service="redis-slave" \
   --detach=true \
@@ -60,7 +58,6 @@ Apache httpd and PHP are served from this container.
   -v /root/course/apache-mod-status.conf:/etc/apache2/mods-available/status.conf:ro \
   -v /root/course/remoteip.load:/etc/apache2/mods-enabled/remoteip.load:ro \
   --env="GET_HOSTS_FROM=dns" \
-  -p 80:80 \
   --network=course_stack \
   --label com.docker.compose.service="frontend" \
   --detach=true \
