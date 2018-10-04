@@ -1,5 +1,5 @@
 {
-  "private": true, 
+  "private": false, 
   "title": "Collect logs & metrics from your app and Docker env",
   "description": "Automate collection of logs & metrics from your apps & Docker, then search, analyze, and visualize them all in one place with Elasticsearch & Kibana",
   "details": {
