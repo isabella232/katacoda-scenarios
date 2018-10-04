@@ -19,3 +19,5 @@ Select yes or no to share basic usage information with Elastic
 
 ![stu](https://user-images.githubusercontent.com/25182304/43741889-e78c71e4-999d-11e8-8d4a-830c752cf136.png)
 
+### Come back here after you configure the defaults
+The next step has URLs to some of the out-of-the-box dashboards, saved searches, and visualizations related to Docker and the components of  the sample application (Apache httpd, Redis, NGINX).  **Click Continue**
