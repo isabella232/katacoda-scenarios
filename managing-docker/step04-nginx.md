@@ -39,7 +39,7 @@ This Redis instance syncs with the master instance and returns the cached conten
   --label co.elastic.metrics/hosts='${data.host}:${data.port}' \
   --env="GET_HOSTS_FROM=dns" \
   --volume="/data" \
-  -p 6379:6379 \
+  -p 6380:6379 \
   --network=course_stack \
   --label com.docker.compose.service="redis-slave" \
   --detach=true \
