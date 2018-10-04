@@ -58,6 +58,7 @@ Apache httpd and PHP are served from this container.
   --label co.elastic.metrics/hosts='${data.host}:${data.port}' \
   -v /root/course/apache2.conf:/etc/apache2/apache2.conf:ro \
   -v /root/course/apache-mod-status.conf:/etc/apache2/mods-available/status.conf:ro \
+  -v /root/course/remoteip.load:/etc/apache2/mods-enabled/remoteip.load:ro \
   --env="GET_HOSTS_FROM=dns" \
   -p 80:80 \
   --network=course_stack \
