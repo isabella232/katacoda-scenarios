@@ -1,6 +1,6 @@
 ### Deploy Elasticsearch 
 
-This docker run command deploys a development Elasticsearch instance.  You can read more at https://www.elastic.co/guide/en/elasticsearch/reference/6.4/docker.html
+This docker run command deploys a development Elasticsearch instance.  You can read more in the [docs](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/docker.html)
 
 `
 docker run -d \
