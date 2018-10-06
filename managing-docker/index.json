@@ -55,6 +55,6 @@
     ]
   },
   "backend": {
-    "imageid": "kubernetes-kubeflow"
+    "imageid": "docker-direct"
   }
 }
