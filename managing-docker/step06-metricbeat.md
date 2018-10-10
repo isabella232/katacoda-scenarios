@@ -15,5 +15,5 @@ And now start Metricbeat:
 --volume="/sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro" \
 --volume="/proc:/hostfs/proc:ro" \
 --volume="/:/hostfs:ro" \
-docker.elastic.co/beats/metricbeat:6.4.2 metricbeat -e`{{execute HOST1}}
+docker.elastic.co/beats/metricbeat:6.3.2 metricbeat -e`{{execute HOST1}}
 
