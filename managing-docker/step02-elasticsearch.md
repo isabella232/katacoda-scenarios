@@ -13,7 +13,7 @@ docker run -d \
   --network=course_stack \
   -p 9300:9300 -p 9200:9200 \
   --health-cmd='curl -s -f http://localhost:9200/_cat/health' \
-  elasticsearch:6.4.1 
+  elasticsearch:6.4.2 
 `{{execute HOST1}}
 
 ### Check the health / readiness of Elasticsearch
