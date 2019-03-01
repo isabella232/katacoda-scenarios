@@ -89,5 +89,6 @@ You can see these labels with the command:
 `docker inspect nginx | grep -A7 Labels`{{execute HOST1}}
 
 ### Put some entries in the Guestbook
-At the top of the terminal you will see an **Guestbook** tab.  Click on that and you will see the Guestbook application.  Type in a message and click Submit.  Send in several messages, and also change the URL by adding `/foo` to generate some 404 errors.  Now return to the Katacoda tab and continue.
+Open the [Guestbook](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/)
+Type in a message and click Submit.  Send in several messages, and also change the URL by adding `/foo` to generate some 404 errors.  Now return to the Katacoda tab and continue.
 
