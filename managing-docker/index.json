@@ -48,7 +48,7 @@
   "environment": {
     "uilayout": "terminal",
     "uieditorpath": "/root/course",
-    "showdashboard": true,
+    "showdashboard": false,
     "dashboards": [
       { "name": "Guestbook", "port": 8080 },
       { "name": "Kibana", "port": 5601 }
