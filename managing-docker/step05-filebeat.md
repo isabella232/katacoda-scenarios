@@ -13,5 +13,5 @@ And now start Filebeat:
 --volume="/var/lib/docker/containers:/var/lib/docker/containers:ro" \
 --volume="/root/course/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro" \
 --volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
-docker.elastic.co/beats/filebeat:6.6.2 filebeat -e -strict.perms=false`{{execute HOST1}}
+docker.elastic.co/beats/filebeat:7.6.2 filebeat -e -strict.perms=false`{{execute HOST1}}
 
