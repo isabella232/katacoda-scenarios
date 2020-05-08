@@ -8,8 +8,6 @@ Now that you have generated some traffic in the Guestbook continue:
 
 If you generated traffic in the Guestbook earlier in the scenario, you should be able to see these in the Kibana Discover app, and in several of the dashboards.  There are links below that will take you to logs and metrics, or you can explore on your own.
 
-- [Infrastructure UI](https://[[HOST_SUBDOMAIN]]-5601-[[KATACODA_HOST]].environments.katacoda.com/app/infra#/infrastructure/inventory?waffleOptions=\(accountId:'',autoBounds:!t,boundsOverride:\(max:1,min:0\),customOptions:!\(\),groupBy:!\(\),metric:\(type:cpu\),nodeType:container,region:'',view:map\))
-
 - [Docker Dashboard](https://[[HOST_SUBDOMAIN]]-5601-[[KATACODA_HOST]].environments.katacoda.com/app/kibana#/dashboard/AV4REOpp5NkDleZmzKkE-ecs)
 
 - [NGINX Dashboard](https://[[HOST_SUBDOMAIN]]-5601-[[KATACODA_HOST]].environments.katacoda.com/app/kibana#/dashboard/55a9e6e0-a29e-11e7-928f-5dbe6f6f5519-ecs)
