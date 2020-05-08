@@ -22,7 +22,6 @@ Above is the Docker metrics dashboard that is part of the Metricbeat Docker modu
 If this is your first time using Katacoda, let me introduce some of the cool ideas:
 
 * In general, you don't need to type.  Most of the time, you can simply click on a command in the instructions to run it.
-* If you need access to a web browser, look for tabs at the top of the terminal window. In this course you will need two pages - one for the Guestbook application, and one for  Kibana. You should see a *Guestbook* tab and a *Kibana* tab in the terminal.  Once you have the Guestbook app running, click on the *Guestbook* tab to open it in a browser window and make some entries. Likewise, once you have Kibana running you should open that tab and look at the data.
-![Tabs](https://raw.githubusercontent.com/elastic/katacoda-scenarios/master/images/Katacoda-tabs.png)
+* In this course you will need to open a few pages - one for the Guestbook application, and one or more for Kibana. Remember to come back to the Katacoda tab or page after you complete each task, for example the instructions will tell you to generate some traffic in the Guestbook app, remember to come back to the instructions after you do that.
 * Each time you start or restart a course everything gets reset. If you misconfigure something somehow, simply restart the course.
 
